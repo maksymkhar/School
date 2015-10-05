@@ -9,6 +9,8 @@
 class Teacher extends Person
 {
 
+    use Worker;
+
     /**
      * Especializacion
      * @var
