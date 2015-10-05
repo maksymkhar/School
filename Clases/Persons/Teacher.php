@@ -1,5 +1,7 @@
 <?php
 
+namespace Com\Iesebre\Dam2\max\Person;
+
 /**
  * Created by PhpStorm.
  * User: max

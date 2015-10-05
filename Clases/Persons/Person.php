@@ -1,4 +1,4 @@
-<?php
+<?php namespace Com\Iesebre\Dam2\max\Person;
 
 /**
  * Created by PhpStorm.
@@ -63,30 +63,10 @@ class Person
     /**
      * Person constructor. EXAGERAT
      * @param string $type
-     * @param $personalId
-     * @param $givenName
-     * @param $sn1
-     * @param $sn2
-     * @param $email
-     * @param $postalAddress
-     * @param $locality
-     * @param $postalCode
-     * @param $state
-     * @param $country
      */
-    public function __construct($type, $personalId, $givenName, $sn1, $sn2, $email, $postalAddress, $locality, $postalCode, $state, $country)
+    public function __construct($type)
     {
         $this->type = $type;
-        $this->personalId = $personalId;
-        $this->givenName = $givenName;
-        $this->sn1 = $sn1;
-        $this->sn2 = $sn2;
-        $this->email = $email;
-        $this->postalAddress = $postalAddress;
-        $this->locality = $locality;
-        $this->postalCode = $postalCode;
-        $this->state = $state;
-        $this->country = $country;
     }
 
 
@@ -95,7 +75,7 @@ class Person
      */
     public function render()
     {
-        echo "La {$this->type} té el nom " . $this->getGivenName();
+        echo "La {$this->type} té el nom " . $this->getGivenName() . "\n";
     }
 
     /**
