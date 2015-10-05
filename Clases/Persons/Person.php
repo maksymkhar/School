@@ -1,4 +1,4 @@
-<?php namespace Com\Iesebre\Dam2\max\Person;
+<?php namespace Com\Iesebre\Dam2\max\Persons;
 
 /**
  * Created by PhpStorm.

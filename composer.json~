@@ -1,0 +1,15 @@
+{
+    "name": "acacha/school",
+    "authors": [
+        {
+            "name": "Max",
+            "email": "maksymkharuk@iesebre.com"
+        }
+    ],
+	"autoload": {
+		"psr-4":{
+			"Com\\Iesebre\\Dam2\\max\\" : "Clases"
+		}
+	},
+    "require": {}
+}
