@@ -27,12 +27,12 @@ class Student extends Person
     }
 
     /**
-     * Imprimim el nom del usuari i el seu salari.
+     * Imprimim el nom del estudiant.
      */
     public function render()
     {
-        if ($this.dual) { echo "El estudiant té el nom " . $this->getGivenName() . " i té el següent salari: " . $this->salary; }
-        else { echo "El estudiant té el nom " . $this->getGivenName() . " i no té cap salari"; }
+        $this->type = "estudiant";
+        parent::render();
     }
 
     /**

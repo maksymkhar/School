@@ -17,6 +17,15 @@ class Teacher extends Person
      */
     public $specialization;
 
+    /**
+     * Imprimim el nom del professor.
+     */
+    public function render()
+    {
+        $this->type = "professor";
+        parent::render();
+    }
+
 
     /**
      * @return mixed
