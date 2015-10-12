@@ -1,6 +1,6 @@
 <?php
 
-namespace Com\Iesebre\Dam2\max\Person;
+namespace Com\Iesebre\Dam2\max\Persons;
 
 /**
  * Created by PhpStorm.
@@ -10,7 +10,26 @@ namespace Com\Iesebre\Dam2\max\Person;
  */
 trait Worker
 {
-
+    /**
+     * Salari del treballador.
+     * @var
+     */
     public $salary;
+
+    /**
+     * @return mixed
+     */
+    public function getSalary()
+    {
+        return $this->salary;
+    }
+
+    /**
+     * @param mixed $salary
+     */
+    public function setSalary($salary)
+    {
+        $this->salary = $salary;
+    }
 
 }

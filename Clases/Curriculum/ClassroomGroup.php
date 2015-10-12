@@ -9,11 +9,15 @@
 namespace Com\Iesebre\Dam2\max\Curriculum;
 
 
-use Com\Iesebre\Dam2\max\Person\Student;
+use Com\Iesebre\Dam2\max\Persons\Student;
 
 class ClassroomGroup
 {
 
+    /**
+     * Matriu d'estudiants.
+     * @var array
+     */
     public $students = array();
 
     /**
@@ -25,6 +29,9 @@ class ClassroomGroup
         $this->students = $students;
     }
 
+    /**
+     * @param Student $student
+     */
     public function addStudent(Student $student)
     {
         array_push($this->students, $student);

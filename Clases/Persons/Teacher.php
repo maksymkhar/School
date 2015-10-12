@@ -1,6 +1,6 @@
 <?php
 
-namespace Com\Iesebre\Dam2\max\Person;
+namespace Com\Iesebre\Dam2\max\Persons;
 
 /**
  * Created by PhpStorm.
@@ -18,6 +18,14 @@ class Teacher extends Person
      * @var
      */
     public $specialization;
+
+    /**
+     * Teacher constructor.
+     */
+    public function __construct()
+    {
+    }
+
 
     /**
      * Imprimim el nom del professor.

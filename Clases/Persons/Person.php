@@ -1,4 +1,6 @@
-<?php namespace Com\Iesebre\Dam2\max\Persons;
+<?php
+
+namespace Com\Iesebre\Dam2\max\Persons;
 
 /**
  * Created by PhpStorm.
@@ -8,52 +10,66 @@
  */
 class Person
 {
+    /**
+     * Tipus de persona.
+     * @var
+     */
     public $type = "persona";
+
     /**
      * Identificador de la persona. (DNI,NIE)
      * @var
      */
     public $personalId;
+
     /**
      * Nom
      * @var
      */
     public $givenName;
+
     /**
      * Cognom 1
      * @var
      */
     public $sn1;
+
     /**
      * Cognom 1
      * @var
      */
     public $sn2;
+
     /**
      * Correu electronic
      * @var
      */
     public $email;
+
     /**
      * Adreça
      * @var
      */
     public $postalAddress;
+
     /**
      * Ciutat
      * @var
      */
     public $locality;
+
     /**
      * Codi postal
      * @var
      */
     public $postalCode;
+
     /**
      * Estat civil
      * @var
      */
     public $state;
+
     /**
      * Pais
      * @var
@@ -61,21 +77,70 @@ class Person
     public $country;
 
     /**
-     * Person constructor. EXAGERAT
-     * @param string $type
+     * Indica si la persona treballa o no.
+     * @var
+     */
+    public $isWorker;
+
+    /**
+     * Salari de la persona.
+     * @var
+     */
+    public $salary;
+
+
+    /**
+     * Person constructor.
+     * @param string $type: Tipus de persona (persona, estudiant, professor)
      */
     public function __construct($type)
     {
         $this->type = $type;
     }
 
-
     /**
      * Imprimim el nom de la persona.
      */
     public function render()
     {
-        echo "La {$this->type} té el nom " . $this->getGivenName() . "\n";
+        switch ($this->type)
+        {
+            case "persona":
+
+                echo "La persona s'anomena " . $this->getGivenName() . ".\n";
+                break;
+
+            case "estudiant":
+
+                if ($this->isWorker)
+                {
+                    if ($this->salary != null)
+                    {
+                        echo "El estudiant s'anomena " . $this->getGivenName() . ", fa dual i té un salari de " . $this->salary . ".\n";
+                    }
+                    else
+                    {
+                        echo "El estudiant s'anomena " . $this->getGivenName() . ", fa dual i no sobra res." . "\n";
+                    }
+                }
+                else
+                {
+                    echo "El estudiant s'anomena " . $this->getGivenName() . " i no fa dual." . "\n";
+                }
+                break;
+
+            case "professor":
+
+                if ($this->salary != null)
+                {
+                    echo "El professor s'anomena " . $this->getGivenName() . " i té un salari de " . $this->salary . ".\n";
+                }
+                else
+                {
+                    echo "El professor s'anomena " . $this->getGivenName() . " i no sobra res." . "\n";
+                }
+        }
+
     }
 
     /**
@@ -236,6 +301,54 @@ class Person
     public function setCountry($country)
     {
         $this->country = $country;
+    }
+
+    /**
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param string $type
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIsWorker()
+    {
+        return $this->isWorker;
+    }
+
+    /**
+     * @param mixed $isWorker
+     */
+    public function setIsWorker($isWorker)
+    {
+        $this->isWorker = $isWorker;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSalary()
+    {
+        return $this->salary;
+    }
+
+    /**
+     * @param mixed $salary
+     */
+    public function setSalary($salary)
+    {
+        $this->salary = $salary;
     }
 
 }

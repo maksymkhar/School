@@ -1,4 +1,6 @@
-<?php  namespace Com\Iesebre\Dam2\max\Person;
+<?php
+
+namespace Com\Iesebre\Dam2\max\Persons;
 
 /**
  * Created by PhpStorm.
@@ -32,6 +34,8 @@ class Student extends Person
     public function render()
     {
         $this->type = "estudiant";
+        $this->isWorker = $this->dual;
+
         parent::render();
     }
 
